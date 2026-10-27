@@ -1,0 +1,12 @@
+# R and RStudio
+.Rhistory
+.RData
+.Ruserdata/
+.Rproj.user/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Generated when running scripts/match_legends.R
+results/current_top5_matches.csv
