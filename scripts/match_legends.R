@@ -77,6 +77,3 @@ all_matches <- map_dfr(legends$player, find_matches)
 write_csv(all_matches, "results/current_top5_matches.csv")
 print(all_matches, n = 50)
 
-# Examples for an article:
-all_matches %>% filter(legend == "Michael Jordan")
-all_matches %>% filter(legend == "Hakeem Olajuwon")
