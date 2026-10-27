@@ -1,0 +1,51 @@
+legend,legend_season,rank,modern_player,team,position_group,stat_distance,physical_distance,position_penalty,overall_distance,method
+Michael Jordan,1990-91,1,Kawhi Leonard,LAC,Forward,0.6136,0.8017,1,0.7015,70% stats / 20% physical / 10% position
+Michael Jordan,1990-91,2,Shai Gilgeous-Alexander,OKC,Guard,1.2065,0.0891,0,1.0102,70% stats / 20% physical / 10% position
+Michael Jordan,1990-91,3,Tyrese Maxey,PHI,Guard,1.1274,0.8974,0,1.0251,70% stats / 20% physical / 10% position
+Michael Jordan,1990-91,4,Donovan Mitchell,CLE,Guard,1.1222,1.028,0,1.0454,70% stats / 20% physical / 10% position
+Michael Jordan,1990-91,5,Anthony Edwards,MIN,Guard,1.2545,0.9183,0,1.127,70% stats / 20% physical / 10% position
+Larry Bird,1984-85,1,Michael Porter Jr.,BRK,Forward,0.5712,0.1887,0,0.4853,70% stats / 20% physical / 10% position
+Larry Bird,1984-85,2,Jalen Johnson,ATL,Forward,0.5794,0.2703,0,0.4996,70% stats / 20% physical / 10% position
+Larry Bird,1984-85,3,Franz Wagner,ORL,Forward,0.7002,0.1791,0,0.5913,70% stats / 20% physical / 10% position
+Larry Bird,1984-85,4,Deni Avdija,POR,Forward,0.6867,0.3586,0,0.5965,70% stats / 20% physical / 10% position
+Larry Bird,1984-85,5,LeBron James,LAL,Forward,0.5984,0.8908,0,0.6398,70% stats / 20% physical / 10% position
+Magic Johnson,1986-87,1,James Harden,2TM,Guard,0.7667,0.9077,0,0.7591,70% stats / 20% physical / 10% position
+Magic Johnson,1986-87,2,Stephon Castle,SAS,Guard,0.8636,0.7164,0,0.7904,70% stats / 20% physical / 10% position
+Magic Johnson,1986-87,3,Cade Cunningham,DET,Guard,0.8707,0.7316,0,0.7985,70% stats / 20% physical / 10% position
+Magic Johnson,1986-87,4,Josh Giddey,CHI,Guard,0.9984,0.4487,0,0.8591,70% stats / 20% physical / 10% position
+Magic Johnson,1986-87,5,LeBron James,LAL,Forward,0.7827,1.0393,1,0.8631,70% stats / 20% physical / 10% position
+Isiah Thomas,1984-85,1,Isaiah Collier,UTA,Guard,0.7525,1.1431,0,0.811,70% stats / 20% physical / 10% position
+Isiah Thomas,1984-85,2,Kevin Porter Jr.,MIL,Guard,0.7554,1.1986,0,0.8287,70% stats / 20% physical / 10% position
+Isiah Thomas,1984-85,3,Ryan Rollins,MIL,Guard,1.0002,0.5373,0,0.8707,70% stats / 20% physical / 10% position
+Isiah Thomas,1984-85,4,De'Aaron Fox,SAS,Guard,1.0016,0.5574,0,0.8743,70% stats / 20% physical / 10% position
+Isiah Thomas,1984-85,5,Darius Garland,2TM,Guard,1.0312,0.3563,0,0.8774,70% stats / 20% physical / 10% position
+Hakeem Olajuwon,1992-93,1,Victor Wembanyama,SAS,Center,1.0049,1.1502,0,0.9857,70% stats / 20% physical / 10% position
+Hakeem Olajuwon,1992-93,2,Jaren Jackson Jr.,2TM,Center,1.1433,0.5912,0,0.9924,70% stats / 20% physical / 10% position
+Hakeem Olajuwon,1992-93,3,Alperen Şengün,HOU,Center,1.2577,0.3988,0,1.0672,70% stats / 20% physical / 10% position
+Hakeem Olajuwon,1992-93,4,Alex Sarr,WAS,Center,1.0264,1.4847,0,1.0855,70% stats / 20% physical / 10% position
+Hakeem Olajuwon,1992-93,5,Jalen Duren,DET,Center,1.2878,0.4717,0,1.0979,70% stats / 20% physical / 10% position
+Kareem Abdul-Jabbar,1976-77,1,Mark Williams,PHO,Center,0.7654,0.4801,0,0.6754,70% stats / 20% physical / 10% position
+Kareem Abdul-Jabbar,1976-77,2,Jalen Duren,DET,Center,0.5356,1.1632,0,0.6866,70% stats / 20% physical / 10% position
+Kareem Abdul-Jabbar,1976-77,3,Jarrett Allen,CLE,Center,0.644,1.2002,0,0.7605,70% stats / 20% physical / 10% position
+Kareem Abdul-Jabbar,1976-77,4,Neemias Queta,BOS,Center,0.8314,0.8166,0,0.7856,70% stats / 20% physical / 10% position
+Kareem Abdul-Jabbar,1976-77,5,Chet Holmgren,OKC,Forward,0.8288,0.5356,1,0.7989,70% stats / 20% physical / 10% position
+Moses Malone,1982-83,1,Karl-Anthony Towns,NYK,Center,0.5233,1.0774,0,0.651,70% stats / 20% physical / 10% position
+Moses Malone,1982-83,2,Jalen Duren,DET,Center,0.5925,1.0393,0,0.6795,70% stats / 20% physical / 10% position
+Moses Malone,1982-83,3,Kel'el Ware,MIA,Center,0.7726,0.6316,0,0.7054,70% stats / 20% physical / 10% position
+Moses Malone,1982-83,4,Jarrett Allen,CLE,Center,0.7327,0.8505,0,0.7214,70% stats / 20% physical / 10% position
+Moses Malone,1982-83,5,Jalen Smith,CHI,Center,0.8073,0.9706,0,0.8029,70% stats / 20% physical / 10% position
+Charles Barkley,1986-87,1,Jarrett Allen,CLE,Center,0.6936,0.7646,1,0.7441,70% stats / 20% physical / 10% position
+Charles Barkley,1986-87,2,Jalen Duren,DET,Center,0.6726,0.8974,1,0.7601,70% stats / 20% physical / 10% position
+Charles Barkley,1986-87,3,Day'Ron Sharpe,BRK,Center,0.8167,0.9751,1,0.8701,70% stats / 20% physical / 10% position
+Charles Barkley,1986-87,4,Marvin Bagley III,2TM,Forward,0.9907,1.028,0,0.9478,70% stats / 20% physical / 10% position
+Charles Barkley,1986-87,5,Sandro Mamukelashvili,TOR,Center,1.0075,0.8001,1,0.9688,70% stats / 20% physical / 10% position
+John Stockton,1989-90,1,Kevin Porter Jr.,MIL,Guard,1.3649,1.3894,0,1.3,70% stats / 20% physical / 10% position
+John Stockton,1989-90,2,Tre Jones,CHI,Guard,1.5646,0.5939,0,1.3357,70% stats / 20% physical / 10% position
+John Stockton,1989-90,3,Isaiah Collier,UTA,Guard,1.4328,1.3871,0,1.3497,70% stats / 20% physical / 10% position
+John Stockton,1989-90,4,Jalen Suggs,ORL,Guard,1.5325,1.4319,0,1.4332,70% stats / 20% physical / 10% position
+John Stockton,1989-90,5,Ryan Rollins,MIL,Guard,1.687,0.6139,0,1.4379,70% stats / 20% physical / 10% position
+Shaquille O'Neal,1999-00,1,Joel Embiid,PHI,Center,0.7171,1.6551,0,0.9528,70% stats / 20% physical / 10% position
+Shaquille O'Neal,1999-00,2,Donovan Clingan,POR,Center,1.4772,1.3482,0,1.3751,70% stats / 20% physical / 10% position
+Shaquille O'Neal,1999-00,3,Jalen Duren,DET,Center,1.1282,2.3395,0,1.4091,70% stats / 20% physical / 10% position
+Shaquille O'Neal,1999-00,4,Karl-Anthony Towns,NYK,Center,1.1805,2.3022,0,1.4267,70% stats / 20% physical / 10% position
+Shaquille O'Neal,1999-00,5,Nikola Vučević,2TM,Center,1.404,1.994,0,1.4748,70% stats / 20% physical / 10% position
