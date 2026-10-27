@@ -1,0 +1,11 @@
+player,pts100,relative_ts,ast_pct,trb_pct,usg_pct,three_pct,stl_pct,blk_pct,height_cm,weight_lb,position,season,data_status
+Michael Jordan,42.7,7.1,25.2,9.5,32.9,31.2,3.7,1.7,198,198,Guard,1990-91,User-supplied historical stats; not independently verified
+Larry Bird,34.3,4.2,25.7,14.7,28.5,42.7,1.9,1.7,206,220,Forward,1984-85,User-supplied historical stats; not independently verified
+Magic Johnson,31.1,6.4,47.2,9.7,26.3,20.5,2.2,0.7,206,215,Guard,1986-87,User-supplied historical stats; not independently verified
+Isiah Thomas,25.5,-1.4,47.9,6.1,24,25.7,2.8,0.4,185,180,Guard,1984-85,User-supplied historical stats; not independently verified
+Hakeem Olajuwon,33.6,4.1,15.8,18.7,28.8,0,2.4,6.5,213,255,Center,1992-93,User-supplied historical stats; not independently verified
+Kareem Abdul-Jabbar,32.7,9.7,16.8,18.4,,,1.5,4.4,218,225,Center,1976-77,User-supplied historical stats; not independently verified
+Moses Malone,30.5,4.7,5.1,21.6,26,0,1.4,3,208,215,Center,1982-83,User-supplied historical stats; not independently verified
+Charles Barkley,28.2,12.2,19,20.8,23.1,20.2,2.1,2.2,198,252,Forward,1986-87,User-supplied historical stats; not independently verified
+John Stockton,23,7,57.4,4.1,20.6,41.6,3.5,0.4,185,170,Guard,1989-90,User-supplied historical stats; not independently verified
+Shaquille O'Neal,38.1,5.5,19.3,18.3,31.2,0,0.6,5.3,216,325,Center,1999-00,User-supplied historical stats; not independently verified
