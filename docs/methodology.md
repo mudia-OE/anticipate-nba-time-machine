@@ -1,4 +1,4 @@
-# Similarity methodology — Version 2 (position-free)
+# Similarity methodology — Version 3 (position-free, 70/30)
 
 ## Question
 For a selected legendary NBA season, which eligible NBA player in 2025–26 has the closest measurable profile?
@@ -28,12 +28,13 @@ For each legend–modern-player pair:
 - **Physical squared distance** = mean squared standardized height and weight differences.
 - **Position** = excluded entirely.
 
-Final score, with remaining groups renormalized from v1's 70:20 ratio:
+Final score, with an intentional 70/30 weighting across the two measured groups:
 
 ```text
-sqrt((7/9) × stat_distance² + (2/9) × physical_distance²)
-= sqrt(0.777777... × stat_distance² + 0.222222... × physical_distance²)
+sqrt(0.70 × stat_distance² + 0.30 × physical_distance²)
 ```
+
+Here `stat_distance²` averages the seven available squared standardized statistical differences, and `physical_distance²` averages height and weight's squared standardized differences. A group's weight does not apply independently to each field.
 
 Smaller = closer profile; it is **a distance, not a percent similarity or an equivalence in talent**. No data column related to position enters this expression. The weights represent an editorial research choice, not a validated optimum.
 
@@ -41,9 +42,10 @@ When a historical stat is missing, such as Kareem's `usg_pct`, exclude that stat
 
 ## Version history
 - **v1 (archived):** 70% statistics, 20% physical, 10% categorical position mismatch; stored in `results/preliminary_top5_matches.csv`.
-- **v2 (current):** 77.78% statistics, 22.22% physical, **0% position**. The source-of-truth results are `results/current_top5_matches.csv`.
+- **v2 (archived):** 77.78% statistics, 22.22% physical, **0% position**; stored in `results/position_free_v2_77_22_matches.csv`.
+- **v3 (current):** 70% statistics, 30% physical, **0% position**; stored in `results/current_top5_matches.csv`.
 
-The raw distances across model versions are not directly comparable because the weights are renormalized. Historical articles originally published using v1 must be updated or clearly marked as using the archived version before comparing their scores to new v2 results.
+The raw distances across model versions are not directly comparable because the weights are renormalized. Historical articles originally published using v1 must be updated or clearly marked as using the archived version before comparing their scores to new v3 results.
 
 ## Limitations
 - The historical legend-season advanced numbers were supplied by the researcher and have not yet been fully audited.
@@ -59,6 +61,6 @@ The raw distances across model versions are not directly comparable because the 
 ## Validation checklist
 1. Confirm exactly 279 modern records, all unique IDs, and ten historical seasons.
 2. Recompute the v1 scores to ensure the standardization reproduces the archived rankings.
-3. Recompute all v2 distances from the two scored groups only.
+3. Recompute all v3 distances from the two scored groups only, using weights 0.70 and 0.30.
 4. Run the R script and compare it with the committed `results/current_top5_matches.csv`.
 5. Verify historical values and conduct weight sensitivity tests.
