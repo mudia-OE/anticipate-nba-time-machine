@@ -1,4 +1,4 @@
-# ANTICIPATE | NBA Time Machine — model v2 (position-free)
+# ANTICIPATE | NBA Time Machine — model v3 (position-free)
 # Run from repository root: source("scripts/match_legends.R")
 # First time only: install.packages("tidyverse")
 
@@ -20,10 +20,10 @@ sds <- modern %>% summarise(across(all_of(stats), sd, na.rm = TRUE))
 height_sd <- sd(modern$height_cm)
 weight_sd <- sd(modern$weight_lb)
 
-# The former 10% position penalty is removed, not simply bypassed.
-# Renormalize the remaining 70:20 ratio to 77.78% stats / 22.22% physical.
-stats_weight <- 7 / 9
-physical_weight <- 2 / 9
+# Deliberate 70/30 balance across statistical and physical groups.
+# No position penalty, position matching or categorical position input.
+stats_weight <- 0.70
+physical_weight <- 0.30
 
 find_matches <- function(legend_name) {
   legend <- legends %>% filter(player == legend_name)
@@ -60,7 +60,7 @@ find_matches <- function(legend_name) {
               team, stat_distance = round(stat_distance, 4),
               physical_distance = round(physical_distance, 4),
               overall_distance = round(overall_distance, 4),
-              method = "77.78% stats / 22.22% physical / 0% position")
+              method = "70% stats / 30% physical / 0% position")
 
   results
 }
