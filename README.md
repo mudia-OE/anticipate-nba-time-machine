@@ -26,7 +26,8 @@ The script writes `results/current_top5_matches.csv` and prints the closest five
 | `data/modern_2025_26.csv` | 279 modern players, at least 1,000 minutes; per-100, advanced, positions, bio height/weight, source URLs |
 | `data/legends.csv` | The 10 selected historical players and season-specific profiles (historical stats still unverified) |
 | `scripts/match_legends.R` | Beginner-friendly tidyverse similarity model |
-| `results/preliminary_top5_matches.csv` | Preliminary matches produced from the existing data, independently calculated outside R |
+| `results/current_top5_matches.csv` | Position-free v2 top-five matches calculated from the complete project dataset |
+| `results/preliminary_top5_matches.csv` | Archived preliminary v1 results, retained for audit and comparison |
 | `docs/methodology.md` | Definitions, scoring formula, and limitations |
 | `docs/data_dictionary.md` | Column definitions and data provenance |
 
@@ -34,11 +35,11 @@ The script writes `results/current_top5_matches.csv` and prints the closest five
 
 The model gives each matchup a **distance score**, using these initial group weights:
 
-- **70% statistical profile**: points per 100 possessions, era-relative true shooting, assist %, total rebound %, usage %, steal %, block %.
-- **20% physical profile**: height in centimetres and listed weight in pounds.
-- **10% position group**: guard, forward, center (penalty when groups differ).
+- **77.78% statistical profile**: points per 100 possessions, era-relative true shooting, assist %, total rebound %, usage %, steal %, block %.
+- **22.22% physical profile**: height in centimetres and listed weight in pounds.
+- **0% position**: guard, forward and center labels are preserved as descriptive context, but never enter the score. Magic Johnson and other versatile or hybrid players should not receive a categorical tax for their listed position.
 
-The numerical variables are standardized by the 2025–26 qualified-player distribution, then compared using squared differences. **Lower scores represent closer statistical/physical matches.** The scoring weights are editorial starting assumptions, not scientifically validated optima.
+The numerical variables are standardized by the 2025–26 qualified-player distribution, then compared using squared differences. The original 70% statistics + 20% physical weights were renormalized to sum to 100% after removing the former 10% position penalty. Scores therefore are not numerically comparable to archived v1 distances. **Lower scores represent closer statistical/physical matches.** The scoring weights are editorial starting assumptions, not scientifically validated optima.
 
 3P% and FT% are retained for descriptive research, but not included in version one of the similarity calculation. We don't use 3P attempt rate because of cross-era play-style changes.
 
