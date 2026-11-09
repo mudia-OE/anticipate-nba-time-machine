@@ -2,7 +2,7 @@
 
 **Which players from the 2025–26 NBA season most closely resemble ten all-time greats?**
 
-An approachable R analytics project from **Anticipate**. It compares the statistical production, physical profiles, and positions of 10 selected NBA legends with **279 players from the completed 2025–26 NBA season** who played at least 1,000 minutes.
+An approachable R analytics project from **Anticipate**. It compares the statistical production and physical profiles of 10 selected NBA legends with **279 players from the completed 2025–26 NBA season** who played at least 1,000 minutes.
 
 > **Important:** Similarity is **not** a greatness ranking. A modern player can have a similar one-season statistical profile to a legend without being comparably accomplished or talented. The historical statistics are researcher-supplied and **not yet independently verified**.
 
@@ -26,22 +26,23 @@ The script writes `results/current_top5_matches.csv` and prints the closest five
 | `data/modern_2025_26.csv` | 279 modern players, at least 1,000 minutes; per-100, advanced, positions, bio height/weight, source URLs |
 | `data/legends.csv` | The 10 selected historical players and season-specific profiles (historical stats still unverified) |
 | `scripts/match_legends.R` | Beginner-friendly tidyverse similarity model |
-| `results/current_top5_matches.csv` | Position-free v2 top-five matches calculated from the complete project dataset |
+| `results/current_top5_matches.csv` | Position-free v3 (70/30) top-five matches calculated from the complete project dataset |
+| `results/position_free_v2_77_22_matches.csv` | Archived position-free v2 rankings (77.78/22.22), retained for audit |
 | `results/preliminary_top5_matches.csv` | Archived preliminary v1 results, retained for audit and comparison |
 | `docs/methodology.md` | Definitions, scoring formula, and limitations |
 | `docs/data_dictionary.md` | Column definitions and data provenance |
 
 ## The comparison method
 
-The model gives each matchup a **distance score**, using these initial group weights:
+The model gives each matchup a **distance score**, using these current group weights:
 
-- **77.78% statistical profile**: points per 100 possessions, era-relative true shooting, assist %, total rebound %, usage %, steal %, block %.
-- **22.22% physical profile**: height in centimetres and listed weight in pounds.
+- **70% statistical profile**: points per 100 possessions, era-relative true shooting, assist %, total rebound %, usage %, steal %, block %.
+- **30% physical profile**: height in centimetres and listed weight in pounds.
 - **0% position**: guard, forward and center labels are preserved as descriptive context, but never enter the score. Magic Johnson and other versatile or hybrid players should not receive a categorical tax for their listed position.
 
-The numerical variables are standardized by the 2025–26 qualified-player distribution, then compared using squared differences. The original 70% statistics + 20% physical weights were renormalized to sum to 100% after removing the former 10% position penalty. Scores therefore are not numerically comparable to archived v1 distances. **Lower scores represent closer statistical/physical matches.** The scoring weights are editorial starting assumptions, not scientifically validated optima.
+The numerical variables are standardized by the 2025–26 qualified-player distribution, then compared using squared differences. Version 3 deliberately assigns 70% to statistics and 30% to physical measurements. The older 77.78/22.22 weighting is archived as v2; the original model's 70/20/10 weighting is archived as v1. Scores across versions are not directly comparable. **Lower scores represent closer statistical/physical matches.** The scoring weights are editorial starting assumptions, not scientifically validated optima.
 
-3P% and FT% are retained for descriptive research, but not included in version one of the similarity calculation. We don't use 3P attempt rate because of cross-era play-style changes.
+3P% and FT% are retained for descriptive research, but not included in the similarity calculation. We don't use 3P attempt rate because of cross-era play-style changes.
 
 Read [the detailed methods](docs/methodology.md) before interpreting any results.
 
@@ -57,6 +58,6 @@ Names and traded-player season totals are normalized in the processed modern dat
 
 ## Possible next improvements
 
-Verify the 10 historical lines against the source, run sensitivity tests for 70/20/10 weight choices, use three-season peaks rather than single legend seasons, and supplement the numerical results with video/scouting analysis.
+Verify the 10 historical lines against the source, run sensitivity tests for the new 70/30 balance, use three-season peaks rather than single legend seasons, and supplement the numerical results with video/scouting analysis.
 
 *Made for Anticipate — NBA research through approachable R.*
