@@ -1,4 +1,4 @@
-# Similarity methodology — Version 1
+# Similarity methodology — Version 2 (position-free)
 
 ## Question
 For a selected legendary NBA season, which eligible NBA player in 2025–26 has the closest measurable profile?
@@ -9,7 +9,9 @@ For a selected legendary NBA season, which eligible NBA player in 2025–26 has 
 ## Included variables
 **Statistical:** `pts100`, `relative_ts`, `ast_pct`, `trb_pct`, `usg_pct`, `stl_pct`, `blk_pct`.
 
-**Physical:** `height_cm`, `weight_lb`. **Position:** broad `Guard`, `Forward`, `Center` group.
+**Physical:** `height_cm`, `weight_lb`.
+
+**Position is not scored.** Guard/forward/center labels are descriptive metadata only. A versatile creator such as Magic Johnson or LeBron James should not be penalized simply because the listing assigns a different broad role. Positions carry a **0% weight** and never affect ranking or distance.
 
 3P% and FT% are present in the files but **not scored**: early NBA periods provide limited and non-equivalent three-point shooting opportunities. The model's statistics measure production more than true on-court style.
 
@@ -17,38 +19,46 @@ For a selected legendary NBA season, which eligible NBA player in 2025–26 has 
 `relative_ts = player TS% − league TS%`, measured in percentage points. The cleaned 2025–26 table uses the project-supplied league average of 58.1%. Historical rTS values are as supplied; these need verification against year-specific NBA average TS%.
 
 ## Standardization
-For each numerical variable, calculate its mean and standard deviation **across the same 279 modern players**. Convert all data to comparable units using the modern standard deviation; equivalently compare modern and historical z-scores.
+For each numerical variable, calculate its mean and sample standard deviation **across the same 279 modern players**. Compare historical and modern values by difference divided by that standard deviation.
 
 ## Distances
 For each legend–modern-player pair:
 
 - **Statistical squared distance** = mean of squared standardized differences across available statistical fields.
-- **Physical squared distance** = mean squared difference in standardized height and weight.
-- **Position penalty** = 0 for same broad group and 1 for a different broad group.
+- **Physical squared distance** = mean squared standardized height and weight differences.
+- **Position** = excluded entirely.
 
-Final score:
+Final score, with remaining groups renormalized from v1's 70:20 ratio:
 
 ```text
-sqrt(0.70 × stat_distance² + 0.20 × physical_distance² + 0.10 × position_penalty)
+sqrt((7/9) × stat_distance² + (2/9) × physical_distance²)
+= sqrt(0.777777... × stat_distance² + 0.222222... × physical_distance²)
 ```
 
-Smaller = closer profile; this is a **distance, not a percent similarity**. The position penalty strength depends on the overall range of squared-distance scores. The weights represent a research choice, not a validated statistical fact.
+Smaller = closer profile; it is **a distance, not a percent similarity or an equivalence in talent**. No data column related to position enters this expression. The weights represent an editorial research choice, not a validated optimum.
 
-When a historical stat is absent, as with Kareem's `usg_pct`, exclude that stat **for that comparison** and average over the others. Never set missing values to zero. The modern profiles must have all required numerical fields to be used without adjustment.
+When a historical stat is missing, such as Kareem's `usg_pct`, exclude that stat **for that comparison** and average over the remaining available statistics; do not fill with zero. All scored modern variables must be present.
+
+## Version history
+- **v1 (archived):** 70% statistics, 20% physical, 10% categorical position mismatch; stored in `results/preliminary_top5_matches.csv`.
+- **v2 (current):** 77.78% statistics, 22.22% physical, **0% position**. The source-of-truth results are `results/current_top5_matches.csv`.
+
+The raw distances across model versions are not directly comparable because the weights are renormalized. Historical articles originally published using v1 must be updated or clearly marked as using the archived version before comparing their scores to new v2 results.
 
 ## Limitations
-- The legend seasons and numbers haven't been independently source-audited.
-- Single-season reference profiles ignore different stages of the legends' careers.
-- Relative TS adjusts efficiency for era, but pace and role contexts are not fully interchangeable.
-- Physical weights are listed bio measurements, not necessarily playing-season weights for the legends.
-- Guard/forward/center categories lose nuance, especially for hybrid players.
-- Steal/block percentages are not comprehensive measures of defensive value.
-- NBA 3-point rules, shot selection and opportunity differed sharply across eras.
-- A player's closest modern profile is not a claim of equal talent, effectiveness, or achievements.
-- The results file was precalculated outside R. The R code is provided for reproducibility and should be run in RStudio before publication.
+- The historical legend-season advanced numbers were supplied by the researcher and have not yet been fully audited.
+- Single-season reference profiles ignore other stages of legends' careers.
+- Relative TS adjusts efficiency for era, but pace and role contexts are not interchangeable.
+- Physical weights are listed measurements, not necessarily verified in-season weights.
+- Removing position avoids an arbitrary categorical penalty, but position/role and defensive tasks still influence the statistical inputs indirectly.
+- Steal/block percentages are not comprehensive measurements of defense.
+- NBA rules and three-point opportunities differ sharply between eras.
+- Closest modern profile does not imply equal talent, effectiveness, or achievements.
+- The results CSV is independently calculated from project inputs; run the R script before claiming R-runtime reproduction.
 
-## Next validation
-1. Verify legend values with Basketball-Reference for the selected seasons.
-2. Execute the supplied R script and compare it against the preliminary CSV.
-3. Check alternative weighting schemes and small-sample bias.
-4. Consider three-year reference peaks to reduce variance.
+## Validation checklist
+1. Confirm exactly 279 modern records, all unique IDs, and ten historical seasons.
+2. Recompute the v1 scores to ensure the standardization reproduces the archived rankings.
+3. Recompute all v2 distances from the two scored groups only.
+4. Run the R script and compare it with the committed `results/current_top5_matches.csv`.
+5. Verify historical values and conduct weight sensitivity tests.
